@@ -10,16 +10,16 @@
 	<canvas id="conwayCanvas" width="1000" height="500" style="border:2px solid #999999;">
 	</canvas>
 
-	<script src="main.js"></script>
-
 	<font color="white">
-		<p id="coords">Coords: 0,0</p>
-		<p id="gen">Generation: -</p>
-		<p id="live">Live cells: -</p>
+		<p id="gen">Generation: 1</p>
 	</font>
 
-	<button type="button" onclick="startGame()">Start</button>
-	<button type="reset" onclick="clearGame()">Clear</button>
+	<button id="play" type="button" onclick="startGame()">Start</button>
+	<button type="button" onclick="stepForward()">Step forward</button>
+	<button type="button" onclick="clearGame()">Clear</button>
+	<button type="button" onclick="randomizeGame()">Randomize</button>
+
+	<script src="main.js"></script>
 
 </body>
 </html>
