@@ -9,6 +9,7 @@ var numRows = 500 / gridSize;
 var numCols = 1000 / gridSize;
 var isRunning = false;
 var gameInterval = 0;
+var neighbours = 0;
 
 // 2d array for current placement of cells in a world
 var world = new Array(numCols);
@@ -46,7 +47,7 @@ function gameUpdate() {
 		for (var y=0; y<numRows; y++) {
 			
 			// Count neighbours
-			var neighbours = 0;
+			neighbours = 0;
 			for (var i=-1; i<=1; i++) {
 				for (var j=-1; j<=1; j++) {
 					var col = x + i;
@@ -92,6 +93,7 @@ function gameUpdate() {
 
 
 function drawGrid() {
+	ctx.beginPath();
 	for (var i=0; i<1000; i+=gridSize) {
 		ctx.moveTo(i,0);
 		ctx.lineTo(i,500);
@@ -103,12 +105,14 @@ function drawGrid() {
 
 	ctx.strokeStyle = "#333";
 	ctx.stroke();
+	ctx.closePath();
 }
 
 
 function drawWorld() {
 	ctx.clearRect(0,0,1000,500);
 
+	ctx.beginPath();
 	for (var x=0; x<numCols; x++) {
 		for (var y=0; y<numRows; y++) {
 			if (world[x][y] == 1) {
@@ -117,6 +121,7 @@ function drawWorld() {
 			}
 		}
 	}
+	ctx.closePath();
 	drawGrid();
 }
 
