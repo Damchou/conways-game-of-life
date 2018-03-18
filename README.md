@@ -1,6 +1,6 @@
 # Conway's Game of Life using JavaScript
 
-![Example gif](https://www.dropbox.com/s/0ac7kiod2mdslbz/conway_example.gif)
+![Example gif](gif/conway_example.gif)
 
 More information: https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 
